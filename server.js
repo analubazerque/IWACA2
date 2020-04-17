@@ -6,8 +6,9 @@ bodyParser = require("body-parser"),
 mongoose = require('mongoose');
 
 var app = express();
-var port = 3000;
+var port = process.env.PORT || 3000;
 var userCtrl = require('./user-controller');
+var DB = "mongodb+srv://buuuuu:pass1234@cluster0-9g3f4.mongodb.net/test?retryWrites=true&w=majority"
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -23,7 +24,7 @@ app.listen(port, function(err){
     console.log("Listening on Port: " + port)
 });
 
-mongoose.connect('mongodb+srv://buuuuu:pass1234@cluster0-9g3f4.mongodb.net/test?retryWrites=true&w=majority');
+mongoose.connect(DB);
 mongoose.connection.on('error', (err) => { 
     console.log('Mongodb Error: ', err); 
     process.exit();
