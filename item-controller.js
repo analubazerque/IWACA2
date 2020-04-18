@@ -1,48 +1,48 @@
-var User = require('./models/user');
+var Item = require('./models/item');
 
-exports.createUser = function(req, res) { 
-    var newuser = new User(req.body);
-    newuser.save(function (err, user) { 
+exports.createItem = function(req, res) { 
+    var newItem = new Item(req.body);
+    newItem.save(function (err, item) { 
         if (err) { 
             res.status(400).json(err);
         }
 
-        res.json(user); 
+        res.json(item); 
 });
 };
 
-exports.getUsers = function(req, res) {
-  User.find({}, function (err, users) {
+exports.getItems = function(req, res) {
+  Item.find({}, function (err, items) {
     if (err) {
       res.status(400).json(err); 
     } 
-    res.json(users);
+    res.json(items);
   }); 
 };
 
-exports.getUser = function(req, res) {
-  User.findOne({_id: req.params.id}, function (err, user) {
+exports.getItem = function(req, res) {
+  Item.findOne({_id: req.params.id}, function (err, item) {
     if (err) {
       res.status(400).json(err);
     } 
-    res.json(user);
+    res.json(item);
   }); 
 };
 
-exports.updateUser = function(req, res) {
-  User.findOneAndUpdate({_id: req.params.id}, req.body, {new: true},function (err, user) {
+exports.updateItem = function(req, res) {
+  Item.findOneAndUpdate({_id: req.params.id}, req.body, {new: true},function (err, item) {
     if (err) {
       res.status(400).json(err);
     } 
-    res.json(user);
+    res.json(item);
   }); 
 };
 
-exports.deleteUser = function(req, res) {
-  User.findByIdAndRemove(req.params.id, function (err, user) {
+exports.deleteItem = function(req, res) {
+  Item.findByIdAndRemove(req.params.id, function (err, item) {
     if (err) {
       res.status(400).json(err);
     } 
-    res.json(user);
+    res.json(item);
   }); 
 };

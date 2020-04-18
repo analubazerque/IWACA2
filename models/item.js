@@ -6,7 +6,7 @@ var itemSchema = new mongoose.Schema({
         enum: ['Dairy', 'Bakery', 'Personal Hygene', 'Cleaning', 'Fruit and Vegatables']
     },    
     name: String,
-    price: float
+    price: Number
 });
 
 module.exports = mongoose.model('Item', itemSchema);
