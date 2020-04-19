@@ -12,15 +12,19 @@
 
 	<!-- Bootstrap core CSS -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/ShoppingListStyles.css" rel="stylesheet">
-	<script src="js/ShoppingListCode.js"></script>
-	<script>
-		window.addEventListener("load", function() {
-        document.querySelector("#calcBill").addEventListener("click",function(){
-            console.log('here');
-            document.forms[0].txtBillAmt.value = calculateBill('listTable');
+	<link href="css/shoppingListStyles.css" rel="stylesheet">
+	<script src="js/shoppingListCode.js"></script>
+	<!-- <script>
+		// window.addEventListener( "load", function() {
+        // let calcBill = document.getElementById('calcBill')
+        // console.log(calcBill)
+        // if(calcBill) {
+        //   addEventListener("click",function(){
+        //     console.log('here');
+        //     document.forms[0].txtBillAmt.value = calculateBill('listTable');
             // document.querySelector("#resultbill").value = calculateBill('listTable'); 
-        });
+            })
+        }
     });
 //   <script>    
 //     window.addEventListener("load", function() {
@@ -30,7 +34,7 @@
 //         });
 //     });
 // 
-	</script>
+	</script> -->
 
 </head>
 
@@ -71,7 +75,8 @@
 				<h1 class="mt-5">Your Shopping List</h1>
 				<p class="lead">Select your items from the list below.</p>
 			</div>
-			<div id="results" class="col-lg-8 text-center order-3">
+			<div id="table" class="col-lg-8 text-center order-3">
+            
 				<h2><img src="./img/cart.jpg" alt="Shopping cart" width="90" height="100" />Start Listing</h2>
 
 					<table onload="" id="listTable" class="indent">
@@ -84,24 +89,17 @@
 							<th>Item</th>
 							<th>Price</th>
 						</tr>
-
 						<tr>
-							<td colspan="3">
+							<td colspan="3"  scope="row">
 							</td>
 						</tr>
-
-						<!-- <tr>                     
-                            <td>
-                                <input name="item0" type="checkbox" />
-                            </td>
-                            <td>
-                                
-                                
-                            </td> -->
-						<!-- <td>
-
-                            </td>
-                        </tr>                     -->
+                        <tbody>
+						                    
+                           <!-- 
+                               rows here
+                            -->
+                         
+                        </tbody>                 
 					</table>
 					<p>
 						<form>
@@ -111,11 +109,10 @@
 								</div>
 								<input type="text" class="form-control" name="txtBillAmt" aria-label=""Total>
 								<input class="btn btn-block btn-secondary" type="button" name="btnCalcBill" value="Calculate Bill" id="calcBill">
-                </div>
-
+                            </div>
 						</form>
 					</p>
-					</form>
+				</form>
 			</div>
 
 			<div class="col-lg-4 text-center order-2">
@@ -155,24 +152,11 @@
 
 	<!-- Bootstrap core JavaScript -->
 	<script src="jquery/jquery.min.js"></script>
-	<script src="js/ShoppingListCode.js"></script>
+	<script src="js/shoppingListCode.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="jquery/table.js"></script>
 	<script>
-		$(document).ready(function(){
-      $.getJSON("/items", function(data){
-          var itemData = '';
-          $each(data, function(key, value) {
-              $each(data, function(key, value){              
-              itemData += '<tr>';
-              itemData += '<td>'+value.section+'</td>';
-              itemData += '<td>'+value.name+'</td>';
-              itemData += '<td>'+value.price+'</td>';
-              itemData += '<tr>';
-              })
-          })
-      })
-  })
+		
 	</script>
 </body>
 

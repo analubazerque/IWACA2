@@ -10,7 +10,6 @@ var app = express();
 var port = process.env.PORT || 3000;
 var userCtrl = require('./item-controller');
 var DB = process.env.DB;
-//var DB = "mongodb+srv://buuuuu:pass1234@cluster0-9g3f4.mongodb.net/test?retryWrites=true&w=majority"
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
