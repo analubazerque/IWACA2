@@ -5,7 +5,7 @@ function draw_table()
 	{
 		return $.ajax(
 		{
-			url: url,
+			url: "http://localhost:3000/items",
 			type: 'GET',
 			cache: false,
 			success: function (html)
@@ -15,12 +15,12 @@ function draw_table()
 			}
 		});
 	};
-	$.getJSONuncached("/get/html")
+	$.getJSONuncached("/getItems/html")
 };
 
 function select_row()
 {
-	$("#listTable tbody tr[id]").click(function ()
+	$("#listTable tr[id]").click(function ()
 	{
 		$(".selected").removeClass("selected");
 		$(this).addClass("selected");

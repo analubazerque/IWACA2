@@ -3,19 +3,19 @@
 
 <head>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
 
-  <title>Shopping List</title>
+	<title>Shopping List</title>
 
-  <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/ShoppingListStyles.css" rel="stylesheet">
-  <script src="js/ShoppingListCode.js"></script>
-    <script>    
-    window.addEventListener("load", function() {
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/ShoppingListStyles.css" rel="stylesheet">
+	<script src="js/ShoppingListCode.js"></script>
+	<script>
+		window.addEventListener("load", function() {
         document.querySelector("#calcBill").addEventListener("click",function(){
             console.log('here');
             document.forms[0].txtBillAmt.value = calculateBill('listTable');
@@ -29,153 +29,151 @@
 //             document.querySelector("#resultbill").value = calculateBill('listTable');
 //         });
 //     });
-// </script>  
-          
-</head>
-<body>  
+// 
+	</script>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Shopping List</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+</head>
+
+<body>
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+		<div class="container">
+			<a class="navbar-brand" href="#">Shopping List</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Services</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
-  <!-- Page Content -->
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h1 class="mt-5">Your Shopping List</h1>
-        <p class="lead">Select your items from the list below.</p>
-      </div>
-      <div id="results" class="col-lg-8 text-center order-3">
-      <h2><img src="./img/cart.jpg" alt="Shopping cart" width="90" height="100" />Start Listing</h2>
+	<!-- Page Content -->
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h1 class="mt-5">Your Shopping List</h1>
+				<p class="lead">Select your items from the list below.</p>
+			</div>
+			<div id="results" class="col-lg-8 text-center order-3">
+				<h2><img src="./img/cart.jpg" alt="Shopping cart" width="90" height="100" />Start Listing</h2>
 
-                <table id="listTable" class="indent">
-                    
-                        <tr>
-                            <th colspan="3">Shopping List</th>
-                        </tr>
-                        <tr>
-                            <th>Select</th>
-                            <th>Item</th>
-                            <th>Price</th>
-                        </tr>      
-                    
-                        <tr>
-                            <td colspan="3">
-                                
-                        </td>
-                        </tr>
-                        
-                        <tr>                     
+					<table onload="" id="listTable" class="indent">
+
+						<tr>
+							<th colspan="3">Shopping List</th>
+						</tr>
+						<tr>
+							<th>Select</th>
+							<th>Item</th>
+							<th>Price</th>
+						</tr>
+
+						<tr>
+							<td colspan="3">
+							</td>
+						</tr>
+
+						<!-- <tr>                     
                             <td>
                                 <input name="item0" type="checkbox" />
                             </td>
                             <td>
                                 
                                 
-                            </td>
-                            <td>
+                            </td> -->
+						<!-- <td>
 
                             </td>
-                        </tr>                    
-                </table>
-            <form class="indent">
-        <p>
-        <form>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">€</span>
-                    </div>
-        <input type="text" class="form-control" name="txtBillAmt" aria-label=""Total>
-        <input class="btn btn-block btn-secondary" type="button" name="btnCalcBill" value="Calculate Bill" id="calcBill">
+                        </tr>                     -->
+					</table>
+					<p>
+						<form>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text">€</span>
+								</div>
+								<input type="text" class="form-control" name="txtBillAmt" aria-label=""Total>
+								<input class="btn btn-block btn-secondary" type="button" name="btnCalcBill" value="Calculate Bill" id="calcBill">
                 </div>
-                
-        </form>
-        <!-- <input type="button" class="btn btn-block btn-secondary" name="btnCalcBill" value="Calculate Bill" id="calcBill" />
-                Total: €
-        <input type="text" class="form-control" name="txtBillAmt" id="resultbill" /> -->
 
-        </p>
-        </form>
-      </div>  
-   
-  <div class="col-lg-4 text-center order-2">
+						</form>
+					</p>
+					</form>
+			</div>
 
-    <h3>Add item to the list</h3>
-    <form enctype="application/json" action="/post/json" method="post">
-        <div class="form-group">
-            <select class="form-control" name="sec_n">
+			<div class="col-lg-4 text-center order-2">
+
+				<h3>Add item to the list</h3>
+				<form enctype="application/json" action="/post/json" method="post">
+					<div class="form-group">
+						<select class="form-control" name="sec_n">
                 <option value="0">Dairy</option>
                 <option value="1">Bakery</option>
                 <option value="2">Personal Hygene</option>
                 <option value="3">Cleaning</option>
                 <option value="4">Fruit and Vegatables</option>
             </select>
+					</div>
+					<div class="form-group">
+						<input class="form-control" type="text" name="item" placeholder="Item">
         </div>
-        <div class="form-group">
-            <input class="form-control" type="text" name="item" placeholder="Item">
+						<div class="form-group">
+							<input class="form-control" type="text" name="price" placeholder="Price">
         </div>
-        <div class="form-group">
-            <input class="form-control" type="text" name="price" placeholder="Price">
-        </div>
-        <button type="submit" class="btn btn-block btn-primary">Submit</button>
-    </form>
-    <br><br>
-    <h3>Delete selected from list</h3>
-    <button id="delete" class="btn btn-block btn-danger">Delete</button>
-          <p class="text-muted">To delete an entree, select the item in the list</p>
-</div>
-</div>
-</div>
+							<button onclick="createItem()" type="submit" class="btn btn-block btn-primary">Submit</button>
+				</form>
+				<br><br>
+				<h3>Delete selected from list</h3>
+				<button onclick="deleteItem()" id="delete" class="btn btn-block btn-danger">Delete</button>
+				<p class="text-muted">To delete an entree, select the item in the list</p>
+			</div>
+		</div>
+	</div>
 
-    <footer class="footer">
-      <div class="container">
-        <span class="text-muted">&copy; 2019</span>
-      </div>
-    </footer>
+	<footer class="footer">
+		<div class="container">
+			<span class="text-muted">&copy; 2019</span>
+		</div>
+	</footer>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="jquery/jquery.min.js"></script>
-  <script src="js/ShoppingListCode.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="jquery/table.js"></script>
-  <script> 
-  $(document).ready(function(){
-      $.getJSON("some.json", function(data){
+	<!-- Bootstrap core JavaScript -->
+	<script src="jquery/jquery.min.js"></script>
+	<script src="js/ShoppingListCode.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="jquery/table.js"></script>
+	<script>
+		$(document).ready(function(){
+      $.getJSON("/items", function(data){
           var itemData = '';
           $each(data, function(key, value) {
+              $each(data, function(key, value){              
               itemData += '<tr>';
               itemData += '<td>'+value.section+'</td>';
               itemData += '<td>'+value.name+'</td>';
               itemData += '<td>'+value.price+'</td>';
               itemData += '<tr>';
+              })
           })
       })
   })
-   </script>
+	</script>
 </body>
 
 </html>
