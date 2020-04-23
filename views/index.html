@@ -77,10 +77,10 @@
 			</div>
 			<div id="table" class="col-lg-8 text-center order-3">
             
-				<h2><img src="./img/cart.jpg" alt="Shopping cart" width="90" height="100" />Start Listing</h2>
+				<h2><img src="./img/cart.jpg" alt="Shopping cart" width="90" height="100" />       Start Listing</h2>
 
-					<table onload="" id="listTable" class="indent">
-
+					<table onload="getAll()" id="listTable" class="indent">
+                        <thead>
 						<tr>
 							<th colspan="3">Shopping List</th>
 						</tr>
@@ -89,17 +89,9 @@
 							<th>Item</th>
 							<th>Price</th>
 						</tr>
-						<tr>
-							<td colspan="3"  scope="row">
-							</td>
-						</tr>
-                        <tbody>
-						                    
-                           <!-- 
-                               rows here
-                            -->
-                         
-                        </tbody>                 
+						</thead>  
+                        <tbody id="itemsData">
+                        </tbody>                      
 					</table>
 					<p>
 						<form>
@@ -134,11 +126,11 @@
 						<div class="form-group">
 							<input class="form-control" type="text" name="price" placeholder="Price">
         </div>
-							<button onclick="createItem()" type="submit" class="btn btn-block btn-primary">Submit</button>
+							<button href="https://a03a3456-19dd-4edd-9b5f-c58332488828.ws-eu01.gitpod.io/#/workspace/mongodb-test/items" type="submit" class="btn btn-block btn-primary">Submit</button>
 				</form>
 				<br><br>
 				<h3>Delete selected from list</h3>
-				<button onclick="deleteItem()" id="delete" class="btn btn-block btn-danger">Delete</button>
+				<button href="https://a03a3456-19dd-4edd-9b5f-c58332488828.ws-eu01.gitpod.io/#/workspace/mongodb-test/items/:id" id="delete" class="btn btn-block btn-danger">Delete</button>
 				<p class="text-muted">To delete an entree, select the item in the list</p>
 			</div>
 		</div>

@@ -16,7 +16,14 @@ exports.getItems = function(req, res) {
     if (err) {
       res.status(400).json(err); 
     } 
-    res.json(items);
+    const dairySection = items.filter(item=>item.section == "Dairy");
+    const bakerySection = items.filter(item=>item.section == "Bakery");
+    const cleaningSection = items.filter(item=>item.section == "Cleaning");
+    const personalHygene = items.filter(item=>item.section == "PersonalHygene");
+    const fruitAndVegetables = items.filter(item=>item.section == "FruitAndVegetables");
+    const obj = [dairySection, bakerySection, cleaningSection, personalHygene, fruitAndVegetables];
+    console.log(obj)
+    res.json(obj);
   }); 
 };
 

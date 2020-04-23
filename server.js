@@ -1,3 +1,4 @@
+require('dotenv').config()
 var logger = require("morgan"),
     cors = require("cors"),
     http = require("http"),
@@ -14,6 +15,7 @@ var DB = process.env.DB;
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(require('./routes'));
+app.use('/scripts', express.static(`${__dirname}/node_modules/`));
 
 app.listen(port, function(err){
     console.log("Listening on Port: " + port)
