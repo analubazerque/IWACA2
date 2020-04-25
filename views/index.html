@@ -15,11 +15,10 @@
 	<link href="css/shoppingListStyles.css" rel="stylesheet">
 	<script src="js/shoppingListCode.js"></script>
 	<script>
-        // EVENT LESTENER TO ADD THE VALUE OFF
+        // EVENT LiSTENER TO CALCULATE THE SUM OF THE VALUE OF
         // THE SELECTED ITEMS 
 		window.addEventListener("load", function() {
         let calcBill = document.getElementById('calcBill')
-        
         if(calcBill) {
           addEventListener("click",function(){
             document.forms[0].txtBillAmt.value = calculateBill('listTable');

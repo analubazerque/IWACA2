@@ -10,6 +10,7 @@ require('dotenv').config(); // IMPORT .ENV FILE
 var app = express(); // SET APP TO EXPRESS
 var port = process.env.PORT;
 var userCtrl = require('./controllers/item-controller');
+//var DB = "mongodb+srv://myuser:somepass123@ca2-j85aa.mongodb.net/test?retryWrites=true&w=majority";
 var DB = process.env.DB;
 
 app.use(bodyParser.json());
