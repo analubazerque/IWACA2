@@ -9,9 +9,9 @@ router.use(express.static(path.resolve(__dirname, 'views'))); //We define the vi
 
 router.post('/items', itemCtrl.createItem);
 router.get('/items', itemCtrl.getItems);
-router.get('/items/:id', itemCtrl.getItem);
-router.delete('/items/:id', itemCtrl.deleteItem);
-router.put('/items/:id', itemCtrl.updateItem);
+router.get('/items/:_id', itemCtrl.getItem);
+router.delete('/items/:_id', itemCtrl.deleteItem);
+router.put('/items/:_id', itemCtrl.updateItem);
 
 module.exports.UPLOAD_PATH = 'uploads';
 
