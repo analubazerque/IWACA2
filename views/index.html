@@ -19,17 +19,15 @@
         // THE SELECTED ITEMS 
 		window.addEventListener("load", function() {
         let calcBill = document.getElementById('calcBill')
-          if(calcBill) {
-            
+        
+        if(calcBill) {
+          addEventListener("click",function(){
             document.forms[0].txtBillAmt.value = calculateBill('listTable');
-            document.querySelector("#resultbill").value = calculateBill('listTable'); 
-            
+            })
         }
     }); 
 	</script>
-
 </head>
-
 <body>
 
 	<!-- Navigation -->
@@ -92,7 +90,8 @@
 									<span class="input-group-text">€</span>
 								</div>
 								<input type="text" class="form-control" name="txtBillAmt" aria-label=""Total>
-			
+                                <input class="btn btn-block btn-secondary" type="button" name="btnCalcBill" value="Total" id="calcBill">
+
                             </div>
 						</form>
 					</p>
