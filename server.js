@@ -1,4 +1,3 @@
-require('dotenv').config()
 var logger = require("morgan"),
     cors = require("cors"),
     http = require("http"),
@@ -8,8 +7,8 @@ var logger = require("morgan"),
 
 require('dotenv').config();
 var app = express();
-var port = process.env.PORT || 3000;
-var userCtrl = require('./item-controller');
+var port = process.env.PORT;
+var userCtrl = require('./controllers/item-controller');
 var DB = process.env.DB;
 
 app.use(logger('dev'));

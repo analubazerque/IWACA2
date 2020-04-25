@@ -1,6 +1,6 @@
 var express = require('express'),
     router = express.Router(),
-    itemCtrl = require('./item-controller');
+    itemCtrl = require('./controllers/item-controller');
     http = require('http'), //This module provides the HTTP server functionalities
     path = require('path'), //The path module provides utilities for working with file and directory paths
     

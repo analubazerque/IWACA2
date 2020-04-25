@@ -79,7 +79,7 @@
             
 				<h2><img src="./img/cart.jpg" alt="Shopping cart" width="90" height="100" />       Start Listing</h2>
 
-					<table onload="getAll()" id="listTable" class="indent">
+					<table id="listTable" class="indent">
                         <thead>
 						<tr>
 							<th colspan="3">Shopping List</th>
@@ -110,27 +110,27 @@
 			<div class="col-lg-4 text-center order-2">
 
 				<h3>Add item to the list</h3>
-				<form enctype="application/json" action="/post/json" method="post">
+				<form id="createItem">
 					<div class="form-group">
-						<select class="form-control" name="sec_n">
-                <option value="0">Dairy</option>
-                <option value="1">Bakery</option>
-                <option value="2">Personal Hygene</option>
-                <option value="3">Cleaning</option>
-                <option value="4">Fruit and Vegatables</option>
+						<select class="form-control" id="section" name="sec_n">
+                <option value="Dairy">Dairy</option>
+                <option value="Bakery">Bakery</option>
+                <option value="PersonalHygene">Personal Hygene</option>
+                <option value="Cleaning">Cleaning</option>
+                <option value="FruitAndVegetables">Fruit and Vegetables</option>
             </select>
 					</div>
 					<div class="form-group">
-						<input class="form-control" type="text" name="item" placeholder="Item">
+						<input class="form-control" type="text" id="itemname" name="item" placeholder="Item">
         </div>
 						<div class="form-group">
-							<input class="form-control" type="text" name="price" placeholder="Price">
+							<input class="form-control" type="text" id="itemprice" name="price" placeholder="Price">
         </div>
-							<button href="https://a03a3456-19dd-4edd-9b5f-c58332488828.ws-eu01.gitpod.io/#/workspace/mongodb-test/items" type="submit" class="btn btn-block btn-primary">Submit</button>
+							<button onclick="addItem()" class="btn btn-block btn-primary">Submit</button>
 				</form>
 				<br><br>
 				<h3>Delete selected from list</h3>
-				<button href="https://a03a3456-19dd-4edd-9b5f-c58332488828.ws-eu01.gitpod.io/#/workspace/mongodb-test/items/:id" id="delete" class="btn btn-block btn-danger">Delete</button>
+				<button id="delete" onclick="select_row()" class="btn btn-block btn-danger">Delete</button>
 				<p class="text-muted">To delete an entree, select the item in the list</p>
 			</div>
 		</div>
@@ -147,9 +147,6 @@
 	<script src="js/shoppingListCode.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="jquery/table.js"></script>
-	<script>
-		
-	</script>
 </body>
 
 </html>
