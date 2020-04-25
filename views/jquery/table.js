@@ -13,9 +13,9 @@ function addItem() {
         },
         body: JSON.stringify(data)
     }
-    console.log(options.body);
+    
     fetch("/items", options)
-        .then(console.log("works"))
+        .then(console.log("New Item added to the list"))
         .catch(err => console.log(err));
 
 }
@@ -39,7 +39,7 @@ function getOne() {
 
     // DATA FOR THE REQUEST BODY
     const data = { section, name, price };
-    console.log(data)
+    
     const options = {
         method: "GET",
         headers: {
@@ -53,19 +53,21 @@ function getOne() {
         .then(res => {
             console.log(res)
         })
-    console.log(res.body)
     return res.body; // RETURNS THE RESPONSE BODY
 };
+
+
 function delete_row() {
 
-    itemChecked = document.querySelector("input[name=item0]:checked")
-    console.log("before")
-    console.log(itemChecked.value)
+//THIS I MY ATTEMP TO IMPLEMENT THE FUNCTION TO getOne IN THE API
+//TO GET FROM THE SELECTED CHECKBOX FECHED FROM THE TABLE
 
-
-    //preparing request
-
-    //console.log(data)
+    
+//SELECTING THE CHECKBOX INPUT BY NAME
+itemChecked = document.querySelector("input[name=item0]:checked")
+    
+    //PREPARING THE REQUEST
+    const data = {}
     const options = {
         method: "DELETE",
         headers: {
@@ -75,20 +77,23 @@ function delete_row() {
     }
     console.log(options.body);
     fetch("/items/:_id", options)
-        .then(console.log("test"))
         .catch(err => console.log(err));
 }
 
+// THIS IS THE FUNCTION THAT GETS ALL THE ITEMS 
+// ON THE LIST AND PRINTS THEM INTO THE TABLE
 var tbody;
 $(document).ready(() => {
 
+    //GET ALL THE ITEMS FROM THE DB THROUGH THE API
     fetch('/items')
         .then(res => res.json())
         .then(res => {
             console.log(res)
 
+            //CREATES THE tbody TAG THAT WILL CONTAIN THE LIST
             tbody = res.map((item, index) => {
-
+                //BUILD THE SECTIONS 
                 var section = "";
 
                 if (index == 0) {
@@ -103,6 +108,8 @@ $(document).ready(() => {
                     section = "FruitAndVegetables"
                 }
 
+                //CREATE THE ROWS IN THE TABLE AS ARRAY OF SECTIONS
+                //WHICH IS AN ARRAY OF AN ARRAY OF ITEMS
                 var tr1 = $(`<tr id="${section}"><td colspan="3">${section}</td></tr>` + item.reduce((acc, current) => acc + `  
                 <tr id="${current.id}">
                     <td><input name="item0" id="select" onclick="delete_row()" type="checkbox"></td>

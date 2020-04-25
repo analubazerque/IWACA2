@@ -15,15 +15,15 @@
 	<link href="css/shoppingListStyles.css" rel="stylesheet">
 	<script src="js/shoppingListCode.js"></script>
 	<script>
+        // EVENT LESTENER TO ADD THE VALUE OFF
+        // THE SELECTED ITEMS 
 		window.addEventListener("load", function() {
         let calcBill = document.getElementById('calcBill')
-        //console.log(calcBill)
-        if(calcBill) {
-          addEventListener("click",function(){
-            console.log('here');
+          if(calcBill) {
+            
             document.forms[0].txtBillAmt.value = calculateBill('listTable');
             document.querySelector("#resultbill").value = calculateBill('listTable'); 
-            })
+            
         }
     }); 
 	</script>
@@ -92,7 +92,7 @@
 									<span class="input-group-text">€</span>
 								</div>
 								<input type="text" class="form-control" name="txtBillAmt" aria-label=""Total>
-								<input class="btn btn-block btn-secondary" type="button" name="btnCalcBill" value="Calculate Bill" id="calcBill">
+			
                             </div>
 						</form>
 					</p>
