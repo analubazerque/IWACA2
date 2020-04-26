@@ -9,7 +9,7 @@ $(document).ready(() => {
             console.log(res)
 
             //CREATES THE tbody TAG THAT WILL CONTAIN THE LIST
-           var tbody = res.map((item, index) => {
+            var tbody = res.map((item, index) => {
                 //BUILD THE SECTIONS 
                 var section = "";
 
@@ -65,62 +65,30 @@ function addItem() {
 
 }
 
-// function getOne() {
+function delete_row() {
 
-//     //THIS I MY ATTEMP TO IMPLEMENT THE FUNCTION TO getOne IN THE API
-//     //TO GET FROM THE SELECTED CHECKBOX FECHED FROM THE TABLE
+    //     //THIS I MY ATTEMP TO IMPLEMENT THE FUNCTION TO getOne IN THE API
+    //     //TO GET FROM THE SELECTED CHECKBOX FECHED FROM THE TABLE
 
-//     // addEventListener("click",function(){
-//     //     var el = document.getElementById("#select")
-//     // })
+    //     //SELECTING THE CHECKBOX INPUT BY ATTRIBUTE
+    var checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
+    console.log(checkboxes);
+    for (var i = 0; i < checkboxes.length; i++) {
+        let selectedID = ($(checkboxes[i]).parent().parent().attr("id"));
 
-//     //SELECTING THE CHECKBOX INPUT BY NAME
-//     itemChecked = document.querySelector("input[name=item0]:checked")
+        //PREPARING THE REQUEST
+        let url = "/items/" + selectedID;
+        const options = {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }
+        
+        fetch(url, options)
+            .then((res) => console.log(res))
+            .catch(err => console.log(err));
+            window.location.reload();
+    }
 
-//     // GETTING THE DETAILS OF THE ITEM
-//     let section = document.querySelector("#section").value;
-//     let name = document.querySelector("#itemname").value;
-//     let price = document.querySelector("#itemprice").value;
-
-//     // DATA FOR THE REQUEST BODY
-//     const data = { section, name, price };
-
-//     const options = {
-//         method: "GET",
-//         headers: {
-//             "Content-Type": "application/json"
-//         },
-//         body: JSON.stringify(data)
-//     }
-//     // FETCH THE API'S ENDPOINT
-//     fetch('/items/:id')
-//         .then(res => res.json())
-//         .then(res => {
-//             console.log(res)
-//         })
-//     return res.body; // RETURNS THE RESPONSE BODY
-// };
-
-
-// function delete_row() {
-
-//     //THIS I MY ATTEMP TO IMPLEMENT THE FUNCTION TO getOne IN THE API
-//     //TO GET FROM THE SELECTED CHECKBOX FECHED FROM THE TABLE
-
-
-//     //SELECTING THE CHECKBOX INPUT BY NAME
-//     itemChecked = document.querySelector("input[name=item0]:checked")
-
-//     //PREPARING THE REQUEST
-//     const data = {}
-//     const options = {
-//         method: "DELETE",
-//         headers: {
-//             "Content-Type": "application/json"
-//         },
-//         body: JSON.stringify(data)
-//     }
-//     console.log(options.body);
-//     fetch("/items/:_id", options)
-//         .catch(err => console.log(err));
-// }
+}
